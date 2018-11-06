@@ -8,14 +8,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.nio.charset.Charset;
-import java.util.function.Supplier;
 
+import java8.util.function.Supplier;
 import org.everit.json.schema.SchemaException;
+import org.everit.json.schema.json.JSONException;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONPointerException;
+import org.everit.json.schema.json.JSONTokener;
 import org.everit.json.schema.loader.SchemaClient;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONPointerException;
-import org.json.JSONTokener;
 
 /**
  * JSON pointer implementation.
@@ -168,7 +168,7 @@ public class JSONPointer {
         if ("#".equals(fragment)) {
             result = document;
         } else {
-            result = (JSONObject) new org.json.JSONPointer(fragment).queryFrom(document);
+            result = (JSONObject) new org.everit.json.schema.json.JSONPointer(fragment).queryFrom(document);
         }
         if (result == null) {
             throw new JSONPointerException(

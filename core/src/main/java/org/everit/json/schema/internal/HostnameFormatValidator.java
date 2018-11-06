@@ -1,9 +1,8 @@
 package org.everit.json.schema.internal;
 
+import java8.util.Optional;
 import org.apache.commons.validator.routines.DomainValidator;
 import org.everit.json.schema.FormatValidator;
-
-import java.util.Optional;
 
 /**
  * Implementation of the "hostname" format value.

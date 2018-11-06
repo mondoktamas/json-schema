@@ -5,7 +5,7 @@ import static org.everit.json.schema.loader.JsonValueTest.withLs;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Test;
 
 /**

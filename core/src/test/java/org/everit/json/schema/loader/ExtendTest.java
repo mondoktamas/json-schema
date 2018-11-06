@@ -17,7 +17,7 @@ package org.everit.json.schema.loader;
 
 import org.everit.json.schema.ObjectComparator;
 import org.everit.json.schema.ResourceLoader;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

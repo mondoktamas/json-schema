@@ -7,10 +7,11 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
+import java8.util.stream.StreamSupport;
 import org.everit.json.schema.ReferenceSchema;
 import org.everit.json.schema.Schema;
+import org.everit.json.schema.json.JSONObject;
 import org.everit.json.schema.loader.internal.ReferenceResolver;
-import org.json.JSONObject;
 
 /**
  * @author erosb
@@ -82,7 +83,7 @@ class ReferenceLookup {
 
     Map<String, Object> withoutRef(JsonObject original) {
         Map<String, Object> rawObj = new HashMap<>();
-        original.keySet().stream()
+        StreamSupport.stream(original.keySet())
                 .filter(name -> !"$ref".equals(name))
                 .forEach(name -> rawObj.put(name, original.get(name)));
         return rawObj;

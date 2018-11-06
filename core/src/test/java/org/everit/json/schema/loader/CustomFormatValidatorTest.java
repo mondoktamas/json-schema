@@ -15,14 +15,13 @@
  */
 package org.everit.json.schema.loader;
 
+import java8.util.Optional;
 import org.everit.json.schema.FormatValidator;
 import org.everit.json.schema.ResourceLoader;
 import org.everit.json.schema.ValidationException;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

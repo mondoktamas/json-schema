@@ -7,18 +7,12 @@ import static org.everit.json.schema.loader.SpecificationVersion.DRAFT_6;
 import static org.everit.json.schema.loader.SpecificationVersion.DRAFT_7;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.everit.json.schema.ReferenceSchema;
 import org.everit.json.schema.SchemaException;
+import org.everit.json.schema.json.JSONPointer;
 import org.everit.json.schema.loader.internal.ReferenceResolver;
-import org.json.JSONPointer;
 
 /**
  * @author erosb

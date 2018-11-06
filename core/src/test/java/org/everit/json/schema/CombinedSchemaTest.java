@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

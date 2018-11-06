@@ -2,8 +2,7 @@ package org.everit.json.schema;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.Optional;
-
+import java8.util.Optional;
 import org.everit.json.schema.internal.DateTimeFormatValidator;
 import org.everit.json.schema.internal.EmailFormatValidator;
 import org.everit.json.schema.internal.HostnameFormatValidator;

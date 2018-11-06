@@ -1,8 +1,9 @@
 package org.everit.json.schema.internal;
 
+import java8.util.Optional;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Optional;
 
 /**
  * Common superclass for {@link IPV4Validator} and {@link IPV6Validator}.

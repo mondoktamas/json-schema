@@ -1,7 +1,8 @@
 package org.everit.json.schema.loader;
 
+import java8.util.function.Function;
+
 import java.io.InputStream;
-import java.util.function.Function;
 
 /**
  * This interface is used by {@link SchemaLoader} to fetch the contents denoted by remote JSON

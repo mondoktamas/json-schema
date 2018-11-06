@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
+import java8.util.Optional;
+import java8.util.stream.StreamSupport;
 import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.BooleanSchema;
 import org.everit.json.schema.CombinedSchema;
@@ -101,7 +102,7 @@ abstract class AbstractSchemaExtractor implements SchemaExtractor {
     }
 
     boolean schemaHasAnyOf(Collection<String> propNames) {
-        return propNames.stream().anyMatch(schemaJson::containsKey);
+        return StreamSupport.stream(propNames).anyMatch(schemaJson::containsKey);
     }
 
     LoaderConfig config() {

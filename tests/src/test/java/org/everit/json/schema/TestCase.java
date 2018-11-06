@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONException;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONTokener;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 

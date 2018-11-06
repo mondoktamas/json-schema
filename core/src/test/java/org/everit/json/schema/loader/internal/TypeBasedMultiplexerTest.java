@@ -16,11 +16,11 @@
 package org.everit.json.schema.loader.internal;
 
 import org.everit.json.schema.SchemaException;
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONObject;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.Test;
 import org.mockito.Mockito;
 

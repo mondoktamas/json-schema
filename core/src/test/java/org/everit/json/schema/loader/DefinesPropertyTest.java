@@ -8,7 +8,7 @@ import org.everit.json.schema.ObjectSchema;
 import org.everit.json.schema.ResourceLoader;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.ValidationException;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

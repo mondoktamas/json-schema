@@ -13,13 +13,13 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.util.LinkedList;
-import java.util.function.Supplier;
 
+import java8.util.function.Supplier;
 import org.everit.json.schema.SchemaException;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONPointerException;
-import org.json.JSONTokener;
+import org.everit.json.schema.json.JSONException;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONPointerException;
+import org.everit.json.schema.json.JSONTokener;
 
 /**
  * @author erosb

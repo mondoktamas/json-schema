@@ -1,8 +1,7 @@
 package org.everit.json.schema.loader.internal;
 
+import java8.util.Optional;
 import org.everit.json.schema.FormatValidator;
-
-import java.util.Optional;
 
 import static java.util.Objects.requireNonNull;
 

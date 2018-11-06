@@ -16,7 +16,7 @@
 package org.everit.json.schema;
 
 import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.toMap;
+import static java8.util.stream.Collectors.toMap;
 import static org.everit.json.schema.TestSupport.buildWithLocation;
 import static org.everit.json.schema.TestSupport.loadAsV6;
 import static org.junit.Assert.assertEquals;
@@ -29,9 +29,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
+import java8.util.stream.StreamSupport;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONPointer;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
-import org.json.JSONPointer;
 import org.junit.Test;
 
 import com.google.re2j.Pattern;
@@ -42,7 +43,7 @@ import nl.jqno.equalsverifier.Warning;
 public class ObjectSchemaTest {
 
     private static final Map<String, Schema> toStringToSchemaMap(Map<java.util.regex.Pattern, Schema> original) {
-        return original.entrySet().stream()
+        return StreamSupport.stream(original.entrySet())
                 .map(entry -> new AbstractMap.SimpleEntry<>(entry.getKey().toString(), entry.getValue()))
                 .collect(toMap(
                         entry -> entry.getKey(),
@@ -197,7 +198,7 @@ public class ObjectSchemaTest {
             assertEquals(1, TestSupport.countCauseByJsonPointer(subjectException, "#/stringPatternMatch"));
             assertEquals(1, TestSupport.countCauseByJsonPointer(subjectException, "#/nested"));
 
-            ValidationException nested1Exception = subjectException.getCausingExceptions().stream()
+            ValidationException nested1Exception = StreamSupport.stream(subjectException.getCausingExceptions())
                     .filter(ex -> ex.getPointerToViolation().equals("#/nested"))
                     .findFirst()
                     .get();
@@ -208,7 +209,7 @@ public class ObjectSchemaTest {
             assertEquals(1, TestSupport.countCauseByJsonPointer(nested1Exception, "#/nested/stringPatternMatch"));
             assertEquals(1, TestSupport.countCauseByJsonPointer(nested1Exception, "#/nested/nested"));
 
-            ValidationException nested2Exception = nested1Exception.getCausingExceptions().stream()
+            ValidationException nested2Exception = StreamSupport.stream(nested1Exception.getCausingExceptions())
                     .filter(ex -> ex.getPointerToViolation().equals("#/nested/nested"))
                     .findFirst()
                     .get();

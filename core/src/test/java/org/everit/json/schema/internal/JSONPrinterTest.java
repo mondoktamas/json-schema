@@ -2,8 +2,8 @@ package org.everit.json.schema.internal;
 
 import org.everit.json.schema.NullSchema;
 import org.everit.json.schema.Schema;
-import org.json.JSONObject;
-import org.json.JSONWriter;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONWriter;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 package org.everit.json.schema;
 
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONTokener;
 
 import java.io.InputStream;
 

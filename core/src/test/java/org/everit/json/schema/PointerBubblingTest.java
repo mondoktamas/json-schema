@@ -15,8 +15,8 @@
  */
 package org.everit.json.schema;
 
+import org.everit.json.schema.json.JSONObject;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -3,8 +3,8 @@ package org.everit.json.schema;
 import static org.everit.json.schema.TestSupport.loadAsV6;
 import static org.junit.Assert.assertEquals;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Test;
 
 public class ConstSchemaTest {

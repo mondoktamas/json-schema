@@ -1,6 +1,6 @@
 package org.everit.json.schema;
 
-import java.util.function.BiFunction;
+import java8.util.function.BiFunction;
 
 public interface Validator {
 

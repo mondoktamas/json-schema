@@ -1,8 +1,7 @@
 package org.everit.json.schema.regexp;
 
-import java.util.Optional;
-
 import com.google.re2j.Pattern;
+import java8.util.Optional;
 
 class RE2JRegexp extends AbstractRegexp {
 

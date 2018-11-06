@@ -6,7 +6,7 @@ import org.everit.json.schema.ResourceLoader;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.SchemaException;
 import org.everit.json.schema.TrueSchema;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

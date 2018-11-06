@@ -1,7 +1,7 @@
 package org.everit.json.schema.internal;
 
 import org.everit.json.schema.Schema;
-import org.json.JSONWriter;
+import org.everit.json.schema.json.JSONWriter;
 
 import java.io.Writer;
 import java.util.Map;

@@ -26,8 +26,8 @@ import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.everit.json.schema.json.JSONObject;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
 import org.junit.Test;
 
 import nl.jqno.equalsverifier.EqualsVerifier;

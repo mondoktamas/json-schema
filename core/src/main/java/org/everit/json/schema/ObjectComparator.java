@@ -1,10 +1,11 @@
 package org.everit.json.schema;
 
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONObject;
+
 import java.util.Arrays;
 import java.util.Objects;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 /**
  * Deep-equals implementation on primitive wrappers, {@link JSONObject} and {@link JSONArray}.

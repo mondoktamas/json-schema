@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.everit.json.schema.SchemaException;
+import org.everit.json.schema.json.JSONPointer;
 import org.everit.json.schema.loader.internal.DefaultSchemaClient;
-import org.json.JSONPointer;
 import org.junit.Test;
 
 /**

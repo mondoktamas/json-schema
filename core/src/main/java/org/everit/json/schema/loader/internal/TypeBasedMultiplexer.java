@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
+import java8.util.function.Consumer;
+import java8.util.stream.StreamSupport;
 import org.everit.json.schema.SchemaException;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 
 /**
  * <strong>This class is deprecated. Currently it isn't used by the library itself, although it wasn't
@@ -221,7 +222,7 @@ public class TypeBasedMultiplexer {
      */
     public void orElse(final Consumer<Object> orElseConsumer) {
         @SuppressWarnings("unchecked")
-        Consumer<Object> consumer = (Consumer<Object>) actions.keySet().stream()
+        Consumer<Object> consumer = (Consumer<Object>) StreamSupport.stream(actions.keySet())
                 .filter(clazz -> clazz.isAssignableFrom(obj.getClass()))
                 .findFirst()
                 .map(actions::get)

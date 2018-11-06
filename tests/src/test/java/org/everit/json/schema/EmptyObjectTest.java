@@ -1,8 +1,8 @@
 package org.everit.json.schema;
 
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONTokener;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.junit.Test;
 
 public class EmptyObjectTest {

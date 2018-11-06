@@ -4,7 +4,7 @@ import java.io.StringWriter;
 import java.util.Objects;
 
 import org.everit.json.schema.internal.JSONPrinter;
-import org.json.JSONWriter;
+import org.everit.json.schema.json.JSONWriter;
 
 /**
  * Superclass of all other schema validator classes of this package.

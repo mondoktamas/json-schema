@@ -8,7 +8,7 @@ import static org.junit.Assert.fail;
 
 import org.everit.json.schema.ResourceLoader;
 import org.everit.json.schema.SchemaException;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Test;
 
 public class SpecVersionDeductionTest {

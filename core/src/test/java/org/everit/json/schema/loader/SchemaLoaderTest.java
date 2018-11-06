@@ -20,8 +20,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Optional;
 
+import java8.util.Optional;
+import java8.util.stream.StreamSupport;
 import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.BooleanSchema;
 import org.everit.json.schema.CombinedSchema;
@@ -48,11 +49,11 @@ import org.everit.json.schema.internal.HostnameFormatValidator;
 import org.everit.json.schema.internal.IPV4Validator;
 import org.everit.json.schema.internal.IPV6Validator;
 import org.everit.json.schema.internal.URIV4FormatValidator;
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONPointer;
 import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
 import org.everit.json.schema.loader.internal.DefaultSchemaClient;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONPointer;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -230,11 +231,11 @@ public class SchemaLoaderTest {
     @Test
     public void implicitAnyOfLoadsTypeProps() {
         CombinedSchema schema = (CombinedSchema) SchemaLoader.load(get("multipleTypesWithProps"));
-        StringSchema stringSchema = schema.getSubschemas().stream()
+        StringSchema stringSchema = StreamSupport.stream(schema.getSubschemas())
                 .filter(sub -> sub instanceof StringSchema)
                 .map(sub -> (StringSchema) sub)
                 .findFirst().orElseThrow(() -> new AssertionError("no StringSchema"));
-        NumberSchema numSchema = schema.getSubschemas().stream()
+        NumberSchema numSchema = StreamSupport.stream(schema.getSubschemas())
                 .filter(sub -> sub instanceof NumberSchema)
                 .map(sub -> (NumberSchema) sub)
                 .findFirst()

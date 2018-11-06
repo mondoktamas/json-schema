@@ -25,6 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
 
+import java8.util.stream.StreamSupport;
 import org.everit.json.schema.loader.SchemaLoader;
 
 public class TestSupport {
@@ -130,14 +131,14 @@ public class TestSupport {
     }
 
     public static long countCauseByJsonPointer(final ValidationException root, final String pointer) {
-        return root.getCausingExceptions().stream()
+        return StreamSupport.stream(root.getCausingExceptions())
                 .map(ValidationException::getPointerToViolation)
                 .filter(ptr -> ptr.equals(pointer))
                 .count();
     }
 
     public static long countMatchingMessage(final List<String> messages, final String expectedSubstring) {
-        return messages.stream()
+        return StreamSupport.stream(messages)
                 .filter(message -> message.contains(expectedSubstring))
                 .count();
     }

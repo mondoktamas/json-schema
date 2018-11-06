@@ -19,8 +19,8 @@ import static org.everit.json.schema.TestSupport.buildWithLocation;
 import static org.junit.Assert.assertTrue;
 
 import org.everit.json.schema.ReferenceSchema.Builder;
+import org.everit.json.schema.json.JSONObject;
 import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 

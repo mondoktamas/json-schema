@@ -17,12 +17,12 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 import java.util.HashMap;
-import java.util.function.Consumer;
 
+import java8.util.function.Consumer;
 import org.everit.json.schema.SchemaException;
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONObject;
 import org.everit.json.schema.loader.internal.DefaultSchemaClient;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

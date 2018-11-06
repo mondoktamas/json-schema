@@ -1,9 +1,8 @@
 package org.everit.json.schema.internal;
 
-import java.util.Optional;
-
+import java8.util.Optional;
 import org.everit.json.schema.FormatValidator;
-import org.json.JSONPointer;
+import org.everit.json.schema.json.JSONPointer;
 
 public class RelativeJsonPointerFormatValidator implements FormatValidator {
 

@@ -1,5 +1,9 @@
 package org.everit.json.schema.loader;
 
+import java8.util.Optional;
+import java8.util.function.Consumer;
+import java8.util.function.Function;
+
 import static java.lang.String.format;
 import static java.util.Collections.emptyMap;
 import static java.util.Objects.requireNonNull;
@@ -7,10 +11,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 class ProjectedJsonObject extends JsonObject {
 

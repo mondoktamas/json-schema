@@ -3,7 +3,7 @@ package org.everit.json.schema;
 import java.util.Objects;
 
 import org.everit.json.schema.internal.JSONPrinter;
-import org.json.JSONException;
+import org.everit.json.schema.json.JSONException;
 
 /**
  * Number schema validator.

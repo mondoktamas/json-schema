@@ -15,12 +15,12 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
+import java8.util.function.Consumer;
+import java8.util.function.Function;
 import org.everit.json.schema.ResourceLoader;
 import org.everit.json.schema.SchemaException;
-import org.json.JSONObject;
+import org.everit.json.schema.json.JSONObject;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

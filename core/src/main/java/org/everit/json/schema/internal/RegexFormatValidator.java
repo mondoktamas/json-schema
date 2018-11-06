@@ -1,9 +1,9 @@
 package org.everit.json.schema.internal;
 
-import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import java8.util.Optional;
 import org.everit.json.schema.FormatValidator;
 
 public class RegexFormatValidator implements FormatValidator {

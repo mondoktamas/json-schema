@@ -1,8 +1,8 @@
 package org.everit.json.schema.regexp;
 
-import static java.util.Objects.requireNonNull;
+import java8.util.Optional;
 
-import java.util.Optional;
+import static java.util.Objects.requireNonNull;
 
 public interface Regexp {
 

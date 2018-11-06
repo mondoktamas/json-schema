@@ -2,7 +2,7 @@ package org.everit.json.schema;
 
 import static java.util.Arrays.asList;
 import static java.util.Objects.requireNonNull;
-import static java.util.stream.Collectors.joining;
+import static java8.util.stream.Collectors.joining;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,22 +11,18 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.Constructor;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.Consumer;
+import java.util.*;
 
+import java8.util.Optional;
+import java8.util.function.Consumer;
+import java8.util.stream.Stream;
+import java8.util.stream.StreamSupport;
+import org.everit.json.schema.json.JSONArray;
+import org.everit.json.schema.json.JSONException;
+import org.everit.json.schema.json.JSONObject;
+import org.everit.json.schema.json.JSONTokener;
 import org.everit.json.schema.loader.SchemaLoader;
 import org.everit.json.schema.regexp.RE2JRegexpFactory;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Test;
@@ -69,7 +65,7 @@ public class IssueTest {
     }
 
     private Optional<File> fileByName(final String fileName) {
-        return Arrays.stream(issueDir.listFiles())
+        return StreamSupport.stream(Arrays.asList(issueDir))
                 .filter(file -> file.getName().equals(fileName))
                 .findFirst();
     }
@@ -138,8 +134,7 @@ public class IssueTest {
             }
         });
         fileByName("validator-config.json").map(file -> fileAsJson(file)).ifPresent(configJson -> {
-            configKeyHandlers.entrySet()
-                    .stream()
+            StreamSupport.stream(configKeyHandlers.entrySet())
                     .filter(entry -> configJson.has(entry.getKey()))
                     .forEach(entry -> entry.getValue().accept(configJson.get(entry.getKey())));
         });
@@ -199,16 +194,16 @@ public class IssueTest {
             Optional<File> expectedFile = fileByName("expectedException.json");
             if (expectedFile.isPresent()) {
                 if (!checkExpectedValues(expectedFile.get(), thrown)) {
-                    expectedFailureList.stream()
+                    StreamSupport.stream(expectedFailureList)
                             .filter(exp -> !validationFailureList.contains(exp))
                             .forEach(System.out::println);
                     System.out.println("--");
-                    validationFailureList.stream()
+                    StreamSupport.stream(validationFailureList)
                             .filter(exp -> !expectedFailureList.contains(exp))
                             .forEach(System.out::println);
                     Assert.fail("Validation failures do not match expected values: \n" +
-                            "Expected: " + expectedFailureList.stream().collect(joining("\n\t")) + ",\nActual:   " +
-                            validationFailureList.stream().collect(joining("\n\t")));
+                            "Expected: " + StreamSupport.stream(expectedFailureList).collect(joining("\n\t")) + ",\nActual:   " +
+                            StreamSupport.stream(validationFailureList).collect(joining("\n\t")));
                 }
             }
         }
